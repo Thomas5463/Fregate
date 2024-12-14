@@ -1,3 +1,11 @@
+
+body {
+    font-family: "Courier New", Courier, monospace;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 243, 221);
+}
+
 h1 {
     color: black;
     text-align: center;
@@ -9,34 +17,60 @@ p {
     line-height: 1.5;
 }
 
-body {
-    font-family: "Courier New", Courier, monospace;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: rgb(255, 243, 221);
+.header {
+    display: flex; /* Aligne les enfants horizontalement */
+    align-items: center; /* Centre les images verticalement avec le titre */
+    justify-content: center; /* Centre tout horizontalement */
+    gap: 20px; /* Espacement entre les images et le titre */
+    text-align: center;
+    margin-bottom: 20px; /* Espace sous l'en-tête */
 }
 
 .container {
     display: flex;
+    flex-direction: column; /* Aligne les éléments verticalement */
     align-items: center;
+    margin-top: 20px;
     text-align: center;
 }
 
 .image-side {
     width: 150px;
     height: 150px;
-    margin: 0 20px;
+    margin: 10px 0; /* Ajoute un espace vertical entre les images et le texte */
 }
 
 .image-side.flipped {
-    transform: scaleX(-1); /* Inverse horizontalement */
+    transform: scaleX(-1);
 }
 
 
 .content-center {
     max-width: 1000px;
+}
+
+.desc {
+    color: rgb(1, 82, 1);
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.countdown {
+    text-align: center;
+    margin-top: 40px;
+    color: rgb(1, 82, 1);
+    font-family: "Courier New", Courier, monospace;
+}
+
+.countdown h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#countdown-timer {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
 }

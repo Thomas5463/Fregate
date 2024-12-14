@@ -8,17 +8,58 @@
 </head>
 <body>
     <div class="container">
-        <img src="logovide.PNG" class="image-side" width="30" height="30">
-        <div class="content-center">
+        <!-- Titre avec images alignées -->
+        <div class="header">
+            <img src="logovide.PNG" class="image-side" alt="Logo gauche">
             <h1>C'est la page de Frégate!</h1>
-            <p>Écoutez-nous:</p>
-            <a href="https://open.spotify.com/intl-fr/artist/0unacI4ftUjaC9PcVHhuBy?si=pjb-1cY8RFauo49oXFTdIQ">Spotify</a>
-            <p></p>
-            <a href="music.apple.com/ca/artist/frégate/1672681691?l=fr-CA">Apple Music</a>
-            <p></p>
-            <a href="https://www.youtube.com/channel/UCSkTs8DT0rw1LBHVgEKNYWw">Youtube</a>
+            <img src="logovide.PNG" class="image-side flipped" alt="Logo droit">
         </div>
-        <img src="logovide.PNG" class="image-side flipped" width="30" height="30">
+
+        <!-- Texte principal -->
+        <div class="content-center">
+            <p>Écoutez-nous:</p>
+            <a href="https://open.spotify.com/intl-fr/artist/0unacI4ftUjaC9PcVHhuBy?si=wCA1wGtwTZyx-xkVJpXc1w">Spotify</a>
+            <a href="music.apple.com/ca/artist/frégate/1672681691?l=fr-CA">Apple Music</a>
+            <a href="https://www.youtube.com/@fregatelebateau">YouTube</a>
+        </div>
+    </div>
+
+    <!-- Texte descriptif -->
+    <div class="desc">
+        <p>On fait des albums en 24h. Essentiellement, on a du fun. </p>
+    </div>
+    <div>
+        <div class="countdown">
+            <h2>DÉCOMPTE DU PROCHAIN ALBUM</h2>
+            <p id="countdown-timer"></p>
+        </div>
+        <script>
+            // Date cible (9 janvier 2025, 12:00 PM)
+            const targetDate = new Date("January 9, 2025 12:00:00").getTime();
+        
+            // Mettre à jour le décompte toutes les secondes
+            const countdownInterval = setInterval(() => {
+                const now = new Date().getTime();
+                const timeRemaining = targetDate - now;
+        
+                // Calcul des jours, heures, minutes et secondes
+                const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+        
+                // Affichage du décompte
+                document.getElementById("countdown-timer").textContent = 
+                    `${days} jours, ${hours} heures, ${minutes} minutes, ${seconds} secondes`;
+        
+                // Si la date cible est atteinte
+                if (timeRemaining < 0) {
+                    clearInterval(countdownInterval);
+                    document.getElementById("countdown-timer").textContent = "L'album est prêt !";
+                }
+            }, 1000);
+        </script>
+        
     </div>
 </body>
 </html>
