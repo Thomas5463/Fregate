@@ -50,12 +50,12 @@
         
                 // Affichage du décompte
                 document.getElementById("countdown-timer").textContent = 
-                    `${days} jours, ${hours} heures, ${minutes} minutes, ${seconds} secondes`;
+                    `${days} jours, ${hours} heures, ${minutes} minutes et ${seconds} secondes`;
         
                 // Si la date cible est atteinte
                 if (timeRemaining < 0) {
                     clearInterval(countdownInterval);
-                    document.getElementById("countdown-timer").textContent = "L'album est prêt !";
+                    document.getElementById("countdown-timer").textContent = "On enregistre!!";
                 }
             }, 1000);
         </script>
